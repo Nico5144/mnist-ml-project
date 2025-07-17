@@ -45,6 +45,9 @@ iface = gr.Interface(
 )
 
 # 4. Launch the app
+# if __name__ == "__main__":
+#     iface.launch()
+
 if __name__ == "__main__":
-    iface.launch()
+    iface.launch(share=True)
 
