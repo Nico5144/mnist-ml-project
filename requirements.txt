@@ -1,0 +1,7 @@
+tensorflow
+scikit-learn
+gradio
+matplotlib
+seaborn
+numpy
+pandas
