@@ -35,10 +35,11 @@ def predict_digit(image):
 iface = gr.Interface(
     fn=predict_digit,
     inputs=gr.Image(
-        shape=(28,28),
+        # shape=(28,28),
         image_mode='L',
         source='canvas',
         invert_colors=False
+        type="numpy"
     ),
     outputs=gr.Label(num_top_classes=3),
     title="MNIST Digit Recognizer",
