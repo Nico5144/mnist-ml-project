@@ -1,6 +1,7 @@
 # gradio_demo.py
 # function to run demo of completed proj
 
+import tensorflow as tf
 import numpy as np
 import gradio as gr
 from tensorflow.keras.models import load_model
@@ -33,16 +34,17 @@ def predict_digit(image):
 # 3. Build the Gradio interface
 iface = gr.Interface(
     fn=predict_digit,
-    inputs=gr.inputs.Image(
+    inputs=gr.Image(
         shape=(28,28),
         image_mode='L',
         source='canvas',
         invert_colors=False
     ),
-    outputs=gr.outputs.Label(num_top_classes=3),
+    outputs=gr.Label(num_top_classes=3),
     title="MNIST Digit Recognizer",
-    description="Draw a digit (0–9) below or upload an image; I’ll predict the top 3 guesses."
+    description="Draw a digit below (or upload); I’ll show my top 3 guesses."
 )
+
 
 # 4. Launch the app
 # if __name__ == "__main__":
